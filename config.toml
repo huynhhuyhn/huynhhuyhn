@@ -1,0 +1,100 @@
+baseURL = "https://hugo-paper.vercel.app/"
+title = "@huyhunhngc"
+author = "Huynh Ngoc Huy"
+copyright = "© 2024, huyhunhngc"
+paginate = 4
+languageCode = "en"
+DefaultContentLanguage = "en"
+enableInlineShortcodes = true
+# prevent build failures when using Hugo's Instagram shortcode due to deprecated Instagram API.
+# See https://github.com/gohugoio/hugo/issues/7228#issuecomment-714490456
+ignoreErrors = ["error-remote-getjson"]
+
+[module]
+  [[module.imports]]
+    path = "github.com/nanxiaobei/hugo-paper"
+
+# needed to  render raw HTML (e.g. <sub>, <sup>, <kbd>, <mark>)
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+#  [markup.highlight]
+#    lineNos = true
+
+[menu]
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 10
+
+  [[menu.main]]
+    identifier = "contact"
+    name = "Contact"
+    url = "/contact/"
+    weight = 10
+
+timeout = 30000
+enableInlineShortcodes = true
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+series = "series"
+
+[privacy]
+  [privacy.vimeo]
+    disabled = false
+    simple = true
+
+  [privacy.twitter]
+    disabled = false
+    enableDNT = true
+    simple = true
+
+  [privacy.instagram]
+    disabled = false
+    simple = true
+
+  [privacy.youtube]
+    disabled = false
+    privacyEnhanced = true
+
+[params]
+  # color style
+  color = 'linen'                        
+
+  # header social icons
+  github = 'huyhunhngc'                     
+  linkedin = 'huynh-ngoc-huy-732a801b0'            
+  twitter = 'huyhn12'                
+
+  # home page profile
+  title = 'Home'
+  avatar = 'https://avatars.githubusercontent.com/u/46745326?v=4'               
+  name = 'Huynh Ngoc Huy'
+  bio = 'Software Engineer with a love of mathematics, physics, and philosophy'
+
+  # misc
+  disableHLJS = true                        
+  disablePostNavigation = false            
+  monoDarkIcon = true                      
+  gravatarCdn = 'https://imgcdn.dev/i/XixMn'         
+  math = true                               
+  localKatex = false                       
+  favicon = "favicon.ico"                   
+  appleTouchIcon = "apple-touch-icon.png"   
+
+  # giscus
+[params.giscus]
+  repo = 'huynhhuyhn/blog'              
+  repoId = 'R_kgDONFHczA'
+  category = 'Announcements'
+  categoryId = 'DIC_kwDONFHczM4Cjpta'
+  mapping = 'pathname'
+  strict = 'strict'
+  reactionsEnabled = '1'
+  theme = 'preferred_color_scheme'
+  inputPosition = 'bottom'
+  lang = 'en'
